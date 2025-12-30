@@ -13,3 +13,7 @@ By using real-time data, it improves service efficiency, reduces waiting time, a
 cd backend
 pip install -r requirements.txt
 python app.py
+
+cd frontend
+npm install
+npm start
