@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global styles */
+.reservation-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.reservation-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  /*background: linear-gradient(90deg, #ffcc00 50%, #000066 50%);*/
+  background-size: 20px 10px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #000066;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #ffcc00;
+  border-radius: 2px;
+}
+
+.table-back-button {
+  background-color: var(--primary);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: auto; 
+  min-width: 120px; 
+}
+.table-back-button:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+.table-back-button span {
+  font-size: 1.2rem;
+}
+
+
+/* User info section */
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.input-card {
+  width: 100%;
+}
+
+.input-inner {
+  position: relative;
+  width: 100%;
+}
+
+.input-inner input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.input-inner input:focus {
+  border-color: #ffcc00;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.2);
+  outline: none;
+}
+
+.input-inner input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.input-inner label {
+  position: absolute;
+  left: 15px;
+  top: -10px;
+  background: #fff;
+  padding: 0 8px;
+  color: #000066;
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Table grid */
+.tables-section {
+  margin: 3rem 0;
+}
+
+.section-title {
+  color: #000066;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.table-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+}
+
+.table-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.table-status {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.table-button.available {
+  background: #fff;
+  color: #000066;
+  border: 2px solid #ffcc00;
+}
+
+.table-button.available::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 204, 0, 0.1);
+  z-index: -1;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.table-button.available:hover::before {
+  transform: translateY(0);
+}
+
+.table-button.available:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 204, 0, 0.3);
+}
+
+.table-button.reserved {
+  background: #f5f5f5;
+  color: #777;
+  border: 2px solid #e0e0e0;
+  position: relative;
+}
+
+.table-button.reserved::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.02) 10px,
+    rgba(0, 0, 0, 0.02) 20px
+  );
+}
+
+.table-button.reserved:hover {
+  cursor: not-allowed;
+}
+
+.table-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* OTP section */
+.otp-container {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  border-left: 4px solid #ffcc00;
+}
+
+.otp-title {
+  font-size: 1.2rem;
+  color: #000066;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.otp-card {
+  width: 100%;
+  max-width: 300px;
+}
+
+.otp-card input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  letter-spacing: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.otp-card input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.2);
+  outline: none;
+}
+
+.otp-btn-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.otp-btn {
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.verify-btn {
+  background: #ffcc00;
+  color: #000066;
+  border: none;
+}
+
+.verify-btn:hover {
+  background: #f0c000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+.resend-btn {
+  background: transparent;
+  color: #000066;
+  border: 1px solid #000066;
+}
+
+.resend-btn:hover {
+  background: #f5f5f5;
+  transform: translateY(-3px);
+}
+
+/* Message */
+.message {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: #000066;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  animation: messageFade 0.5s ease-in;
+  border-left: 4px solid #ffcc00;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes messageFade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservation-container {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .user-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .otp-btn-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .otp-btn {
+    width: 100%;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+}

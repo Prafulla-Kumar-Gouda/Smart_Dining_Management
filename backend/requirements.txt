@@ -1,0 +1,9 @@
+Flask
+Flask-CORS
+pymongo
+twilio
+python-decouple
+python-dotenv
+gunicorn
+bcrypt
+pyjwt
